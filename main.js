@@ -7,6 +7,24 @@ $(document).ready(init);
 function init() {
   $towers = $('.tower');
   $towers.click(towerClicked);
+  $('form').submit(startGame);
+}
+
+function startGame(event) {
+  event.preventDefault();
+  $('.disk').remove();
+
+  var quantity = $('#quantity').val();
+  var widthDiff = 70 / quantity - 1;
+  var disks = [];
+
+  for(var i = 0; i < quantity; i++) {
+    var $disk = $('<div>').addClass('disk').data('size', i + 1);
+    var width = 20 + widthDiff * i;
+    $disk.css('width', width + '%');
+    disks.push($disk);
+  }
+  $('.base').first().append(disks);
 }
 
 function towerClicked() {
@@ -37,4 +55,3 @@ function checkWin() {
     alert('WIN!')
   }
 }
-

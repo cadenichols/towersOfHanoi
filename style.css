@@ -34,11 +34,10 @@ body {
 }
 
 .disk {
-  display: inline-block;
   height: 7vh;
   width: 100%;
   background-color: rgb(84, 84, 84);
-  margin-top: 2vh;
+  margin: 1vh auto;
   border-radius: 20px;
   box-shadow: 4px 4px 15px grey;
 }
